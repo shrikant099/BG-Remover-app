@@ -15,7 +15,10 @@ const app = express();
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: ["http://localhost:5173", "https://bg-remover-app-667y-git-master-shrikant099s-projects.vercel.app"],
+}));
 
 app.use(
   session({
