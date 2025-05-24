@@ -1,0 +1,27 @@
+#Node Modules
+client/node_modules/
+server/node_modules/
+
+# Build output
+client/dist/
+server/dist/
+
+# Logs
+logs/
+
+#env
+client/.env
+server/.env
+
+# IDE specific files
+.vscode/
+
+# OS generated files
+.DS_Store
+
+# Temporary files
+*.tmp
+
+# Coverage reports
+coverage/
+
