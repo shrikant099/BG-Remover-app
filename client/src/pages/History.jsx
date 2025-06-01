@@ -85,7 +85,6 @@ const History = () => {
                       1 credit used
                     </span>
                   </div>
-                 
                 </div>
               </CardContent>
             </Card>

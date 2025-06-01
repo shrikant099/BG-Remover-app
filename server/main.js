@@ -5,20 +5,21 @@ import dataBaseConnection from "./config/dbConnection.js";
 import userRoutes from "./routes/user.route.js";
 import passport from "./config/google.auth.js";
 import session from "express-session";
-import authRoutes from './routes/google.auth.rotues.js'
+import authRoutes from "./routes/google.auth.rotues.js";
 import imageRoutes from "./routes/image.route.js";
 
 dotenv.config();
 
 const app = express();
 
-
 // middleware
 app.use(express.json());
-app.use(cors({
-  credentials: true,
-  origin: ["http://localhost:5173"],
-}));
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:5173" , "https://bg-remover-app9.netlify.app/"],
+  })
+);
 
 app.use(
   session({
@@ -33,7 +34,6 @@ app.use(passport.session());
 
 app.use("/auth", authRoutes);
 
-
 // dataBase Connection
 await dataBaseConnection();
 
@@ -46,7 +46,6 @@ app.use("/api/user", userRoutes);
 
 // image routes
 app.use("/api/image", imageRoutes);
-
 
 app.listen(process.env.PORT || 7000, (req, res) => {
   console.log(
