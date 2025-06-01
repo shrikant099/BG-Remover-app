@@ -102,4 +102,29 @@ const downloadImage = async (req, res) => {
   res.send(response.data);
 };
 
-export { uploadImageController , downloadImage };
+// History API Particular User
+const getHistory = async (req, res) => {
+  const userId = req.user.id;
+  if (!userId) {
+    return res.status(401).json({ message: "Unauthorized: Invalid token" });
+  }
+
+  try {
+    const isUserImages = await ImageModel.find({ userId }).sort({
+      createdAt: -1,
+    });
+    if (!isUserImages) {
+      return res.status(404).json({ message: "No Images Found" });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Images Fetched Succesfull",
+      data: isUserImages,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export { uploadImageController, downloadImage , getHistory };

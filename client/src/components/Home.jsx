@@ -23,11 +23,11 @@ const Home = () => {
 
   // get Token
   const token = Cookies.get("token");
-  useEffect(() => {
-    if (!token) {
-      navigate("/login");
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (!token) {
+  //     navigate("/login");
+  //   }
+  // }, [token]);
 
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
