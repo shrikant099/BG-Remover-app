@@ -18,7 +18,7 @@ router.get(
     const { token, user } = req.user;
 
     // Frontend URL pe redirect kar do with token
-    res.redirect(`http://localhost:5173/login-success?token=${token}`);
+    res.redirect(`${process.env.FRONTEND_URL}/login-success?token=${token}`);
   }
 );
 

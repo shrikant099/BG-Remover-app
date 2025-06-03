@@ -10,4 +10,4 @@ const dataBaseConnection = async () => {
   }
 };
 
-export default dataBaseConnection
+export default dataBaseConnection;
