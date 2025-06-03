@@ -17,7 +17,11 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:5173" , "https://bg-remover-app9.netlify.app/"],
+    origin: [
+      "http://localhost:5173", 
+      "https://bg-remover-app9.netlify.app",
+      "https://bg-remover-app-3.onrender.com" // <== Add karo yeh line
+    ],
   })
 );
 

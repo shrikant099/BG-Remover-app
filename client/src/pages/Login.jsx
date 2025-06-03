@@ -20,7 +20,10 @@ const Login = () => {
   const { showLoader, hideLoader } = useLoader();
 
   const handleGoogleLogin = () => {
-    window.open(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/auth/google`, "_self");
+    window.open(
+      `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/auth/google`,
+      "_self"
+    );
   };
 
   const [formData, setFormData] = useState({
@@ -47,10 +50,13 @@ const Login = () => {
     showLoader();
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/login`,
+        {
+          email,
+          password,
+        }
+      );
 
       const token = res.data.token;
       const decodedUser = jwtDecode(token);
