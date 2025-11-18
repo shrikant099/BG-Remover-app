@@ -20,7 +20,8 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://bg-remover-app9.netlify.app",
-      "https://bg-remover-app-3.onrender.com", // <== Add karo yeh line
+      "https://bg-remover-app-3.onrender.com",
+      "https://background-remove-instantly.netlify.app"// <== Add karo yeh line
     ],
   })
 );
